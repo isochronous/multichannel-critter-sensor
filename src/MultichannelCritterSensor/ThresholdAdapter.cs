@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AdvancedCritterSensor
+namespace MultichannelCritterSensor
 {
 	/// <summary>
 	/// Exposes one of the sensor's three thresholds (combined, critters, eggs) through the
@@ -19,7 +19,7 @@ namespace AdvancedCritterSensor
 
 		public Kind kind;
 
-		public AdvancedCritterSensor sensor;
+		public MultichannelCritterSensor sensor;
 
 		public float Threshold
 		{
@@ -38,7 +38,7 @@ namespace AdvancedCritterSensor
 			{
 				if (sensor == null)
 					return;
-				int v = Mathf.Clamp(Mathf.RoundToInt(value), 0, AdvancedCritterSensor.MaxThreshold);
+				int v = Mathf.Clamp(Mathf.RoundToInt(value), 0, MultichannelCritterSensor.MaxThreshold);
 				switch (kind)
 				{
 					case Kind.Critters: sensor.critterThreshold = v; break;
@@ -93,7 +93,7 @@ namespace AdvancedCritterSensor
 
 		public float RangeMin => 0f;
 
-		public float RangeMax => AdvancedCritterSensor.MaxThreshold;
+		public float RangeMax => MultichannelCritterSensor.MaxThreshold;
 
 		public LocString Title => ModStrings.TitleLoc;
 

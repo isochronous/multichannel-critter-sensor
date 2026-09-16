@@ -1,16 +1,16 @@
 using STRINGS;
 
-namespace AdvancedCritterSensor
+namespace MultichannelCritterSensor
 {
 	public static class ModStrings
 	{
-		private const string PrefabKey = "STRINGS.BUILDINGS.PREFABS.ADVANCEDCRITTERSENSOR.";
+		private const string PrefabKey = "STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.";
 
 		private static readonly string Green = UI.FormatAsAutomationState("Green Signal", UI.AutomationState.Active);
 		private static readonly string Red = UI.FormatAsAutomationState("Red Signal", UI.AutomationState.Standby);
 		private static readonly string Ribbon = UI.FormatAsLink("Automation Ribbon", "LOGICRIBBON");
 
-		public static readonly string Name = UI.FormatAsLink("Advanced Critter Sensor", "ADVANCEDCRITTERSENSOR");
+		public static readonly string Name = UI.FormatAsLink("Multichannel Critter Sensor", "MULTICHANNELCRITTERSENSOR");
 		public const string Desc = "Tracking exactly which critters and eggs share a room allows for much finer control over automated ranching.";
 		public static readonly string Effect =
 			"Counts the selected " + UI.FormatAsLink("Critters", "CREATURES") + " and Eggs in its room and writes the results to an " + Ribbon + ":\n" +
@@ -30,8 +30,8 @@ namespace AdvancedCritterSensor
 			"Bit 4: " + Green + " pulse when the tracked count falls";
 		public static readonly string PortInactive = "Otherwise, sends a " + Red + " on each bit";
 
-		public const string SideScreenTitleKey = "STRINGS.UI.UISIDESCREENS.ADVANCED_CRITTER_SENSOR_SIDE_SCREEN.TITLE";
-		public const string SideScreenTitle = "Advanced Critter Sensor";
+		public const string SideScreenTitleKey = "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.TITLE";
+		public const string SideScreenTitle = "Multichannel Critter Sensor";
 
 		public const string ModeLabel = "Thresholds:";
 		public const string ModeCombined = "Combined";
@@ -54,7 +54,7 @@ namespace AdvancedCritterSensor
 
 		// Keyed LocStrings: the vanilla threshold screen renders these via LocString.ToString(),
 		// which looks the key up, so unkeyed instances would print "MISSING.".
-		private const string SideScreenKey = "STRINGS.UI.UISIDESCREENS.ADVANCED_CRITTER_SENSOR_SIDE_SCREEN.";
+		private const string SideScreenKey = "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.";
 		public static readonly LocString TitleLoc = Keyed("TITLE", SideScreenTitle);
 		public static readonly LocString ValueNameCount = Keyed("VALUE_NAME_COUNT", "Count");
 		public static readonly LocString ValueNameCritters = Keyed("VALUE_NAME_CRITTERS", "Critters");

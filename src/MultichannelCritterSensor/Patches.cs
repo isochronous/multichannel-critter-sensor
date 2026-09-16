@@ -1,7 +1,7 @@
 using HarmonyLib;
 using PeterHan.PLib.UI;
 
-namespace AdvancedCritterSensor
+namespace MultichannelCritterSensor
 {
 	public static class Patches
 	{
@@ -11,7 +11,7 @@ namespace AdvancedCritterSensor
 		{
 			public static void Prefix()
 			{
-				ModUtil.AddBuildingToPlanScreen("Automation", AdvancedCritterSensorConfig.ID, "sensors",
+				ModUtil.AddBuildingToPlanScreen("Automation", MultichannelCritterSensorConfig.ID, "sensors",
 					LogicCritterCountSensorConfig.ID, ModUtil.BuildingOrdering.After);
 			}
 		}
@@ -28,11 +28,11 @@ namespace AdvancedCritterSensor
 				Tech tech = Db.Get().Techs.TryGet(TechId);
 				if (tech == null)
 				{
-					Debug.LogWarning("[AdvancedCritterSensor] Tech '" + TechId + "' not found; building will be unlocked from the start");
+					Debug.LogWarning("[MultichannelCritterSensor] Tech '" + TechId + "' not found; building will be unlocked from the start");
 					return;
 				}
-				if (!tech.unlockedItemIDs.Contains(AdvancedCritterSensorConfig.ID))
-					tech.unlockedItemIDs.Add(AdvancedCritterSensorConfig.ID);
+				if (!tech.unlockedItemIDs.Contains(MultichannelCritterSensorConfig.ID))
+					tech.unlockedItemIDs.Add(MultichannelCritterSensorConfig.ID);
 			}
 		}
 
@@ -41,7 +41,7 @@ namespace AdvancedCritterSensor
 		{
 			public static void Postfix()
 			{
-				PUIUtils.AddSideScreenContent<AdvancedCritterSensorSideScreen>();
+				PUIUtils.AddSideScreenContent<MultichannelCritterSensorSideScreen>();
 			}
 		}
 	}

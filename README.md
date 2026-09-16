@@ -1,6 +1,6 @@
-# Advanced Critter Sensor
+# Multichannel Critter Sensor
 
-An [Oxygen Not Included](https://www.klei.com/games/oxygen-not-included) mod that adds an **Advanced Critter Sensor**: a room-based critter/egg counter that outputs over an **Automation Ribbon** and lets you choose exactly which species and egg types to count.
+An [Oxygen Not Included](https://www.klei.com/games/oxygen-not-included) mod that adds a **Multichannel Critter Sensor**: a room-based critter/egg counter that outputs over an **Automation Ribbon** and lets you choose exactly which species and egg types to count.
 
 Status: **work in progress**. The building uses the vanilla critter sensor art flipped upside down as placeholder art.
 
@@ -28,13 +28,13 @@ Unlocked by **Multiplexing** (two research tiers past the vanilla sensor's Anima
 Requires the .NET SDK (8+). Shared build configuration lives in the [oni-mods-common](https://github.com/isochronous/oni-mods-common) submodule, so clone with `--recurse-submodules` (or run `git submodule update --init`). The game DLLs are referenced directly from the game install; override the path if yours differs:
 
 ```
-dotnet build src/AdvancedCritterSensor -c Release -p:GameFolder="<path-to>\OxygenNotIncluded"
+dotnet build src/MultichannelCritterSensor -c Release -p:GameFolder="<path-to>\OxygenNotIncluded"
 ```
 
-A successful build merges [PLib](https://github.com/peterhaneve/ONIMods/tree/main/PLib) into the DLL and deploys the mod to `Documents\Klei\OxygenNotIncluded\mods\local\AdvancedCritterSensor` (disable with `-p:ModDeployFolder=none`).
+A successful build merges [PLib](https://github.com/peterhaneve/ONIMods/tree/main/PLib) into the DLL and deploys the mod to `Documents\Klei\OxygenNotIncluded\mods\local\MultichannelCritterSensor` (disable with `-p:ModDeployFolder=none`).
 
 ## Implementation notes
 
-- `AdvancedCritterSensor` (the building component) walks the room cavity's creature and egg lists every 200 ms, filtering each entry by prefab tag, and sends the packed value through a `RibbonOutputPort`. Pulse bits are cleared from the circuit manager's `onLogicTick` callback, which fires right after the network samples sender values, so each pulse is read by exactly one tick.
+- `MultichannelCritterSensor` (the building component) walks the room cavity's creature and egg lists every 200 ms, filtering each entry by prefab tag, and sends the packed value through a `RibbonOutputPort`. Pulse bits are cleared from the circuit manager's `onLogicTick` callback, which fires right after the network samples sender values, so each pulse is read by exactly one tick.
 - The side screen is built with PLib UI. The three threshold editors are runtime clones of the vanilla `ThresholdSwitchSideScreen` prefab, each targeting a small `IThresholdSwitch` adapter object, so they look and behave exactly like the stock sensor's controls.
 - Patch points: `GeneratedBuildings.LoadGeneratedBuildings` (plan screen), `Db.Initialize` (tech), `DetailsScreen.OnPrefabInit` (side screen registration).

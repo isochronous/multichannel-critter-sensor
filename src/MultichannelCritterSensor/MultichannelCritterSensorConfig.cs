@@ -3,15 +3,15 @@ using STRINGS;
 using TUNING;
 using UnityEngine;
 
-namespace AdvancedCritterSensor
+namespace MultichannelCritterSensor
 {
 	/// <summary>
 	/// Building definition: a 1x1 sensor that reuses the vanilla critter sensor art
 	/// (flipped vertically as placeholder art) and exposes a single 4-bit ribbon output.
 	/// </summary>
-	public sealed class AdvancedCritterSensorConfig : IBuildingConfig
+	public sealed class MultichannelCritterSensorConfig : IBuildingConfig
 	{
-		public const string ID = "AdvancedCritterSensor";
+		public const string ID = "MultichannelCritterSensor";
 
 		public override BuildingDef CreateBuildingDef()
 		{
@@ -29,7 +29,7 @@ namespace AdvancedCritterSensor
 			def.AlwaysOperational = true;
 			def.LogicOutputPorts = new List<LogicPorts.Port>
 			{
-				LogicPorts.Port.RibbonOutputPort(AdvancedCritterSensor.PortId, new CellOffset(0, 0),
+				LogicPorts.Port.RibbonOutputPort(MultichannelCritterSensor.PortId, new CellOffset(0, 0),
 					ModStrings.PortName, ModStrings.PortActive, ModStrings.PortInactive, show_wire_missing_icon: true)
 			};
 			def.AddSearchTerms(SEARCH_TERMS.CRITTER);
@@ -40,7 +40,7 @@ namespace AdvancedCritterSensor
 
 		public override void DoPostConfigureComplete(GameObject go)
 		{
-			go.AddOrGet<AdvancedCritterSensor>();
+			go.AddOrGet<MultichannelCritterSensor>();
 			go.GetComponent<KPrefabID>().AddTag(GameTags.OverlayInFrontOfConduits);
 		}
 	}

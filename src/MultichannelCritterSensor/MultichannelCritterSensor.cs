@@ -6,7 +6,7 @@ using UnityEngine;
 
 #pragma warning disable 649, 169 // [MyCmpGet]/[MyCmpAdd] fields are populated by the game via reflection
 
-namespace AdvancedCritterSensor
+namespace MultichannelCritterSensor
 {
 	/// <summary>
 	/// Room-based critter/egg counter that writes a 4-bit value to a ribbon output port.
@@ -22,9 +22,9 @@ namespace AdvancedCritterSensor
 	/// each entry is additionally filtered by the selected species / egg prefab tags.
 	/// </summary>
 	[SerializationConfig(MemberSerialization.OptIn)]
-	public sealed class AdvancedCritterSensor : KMonoBehaviour, ISim200ms
+	public sealed class MultichannelCritterSensor : KMonoBehaviour, ISim200ms
 	{
-		public static readonly HashedString PortId = new HashedString("AdvancedCritterSensorOutput");
+		public static readonly HashedString PortId = new HashedString("MultichannelCritterSensorOutput");
 
 		public const int MaxThreshold = 64;
 
@@ -36,8 +36,8 @@ namespace AdvancedCritterSensor
 		private const int ThresholdMask = (1 << PrimaryBit) | (1 << EggBit);
 		private const int PulseMask = (1 << RisingBit) | (1 << FallingBit);
 
-		private static readonly EventSystem.IntraObjectHandler<AdvancedCritterSensor> OnCopySettingsDelegate =
-			new EventSystem.IntraObjectHandler<AdvancedCritterSensor>(delegate(AdvancedCritterSensor component, object data)
+		private static readonly EventSystem.IntraObjectHandler<MultichannelCritterSensor> OnCopySettingsDelegate =
+			new EventSystem.IntraObjectHandler<MultichannelCritterSensor>(delegate(MultichannelCritterSensor component, object data)
 			{
 				component.OnCopySettings(data);
 			});
@@ -256,7 +256,7 @@ namespace AdvancedCritterSensor
 		private void OnCopySettings(object data)
 		{
 			GameObject sourceGo = data as GameObject;
-			AdvancedCritterSensor source = sourceGo != null ? sourceGo.GetComponent<AdvancedCritterSensor>() : null;
+			MultichannelCritterSensor source = sourceGo != null ? sourceGo.GetComponent<MultichannelCritterSensor>() : null;
 			if (source == null)
 				return;
 			source.EnsureLists();

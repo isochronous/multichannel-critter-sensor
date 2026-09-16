@@ -6,10 +6,10 @@ using PeterHan.PLib.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace AdvancedCritterSensor
+namespace MultichannelCritterSensor
 {
 	/// <summary>
-	/// Side screen for the Advanced Critter Sensor. The frame is PLib UI; the threshold
+	/// Side screen for the Multichannel Critter Sensor. The frame is PLib UI; the threshold
 	/// editors are clones of the vanilla ThresholdSwitchSideScreen prefab, and the species
 	/// lists are clones of the vanilla storage-filter row/element prefabs (the tree used by
 	/// every storage container), driven directly rather than through their own scripts.
@@ -27,7 +27,7 @@ namespace AdvancedCritterSensor
 	///           [x] icon Egg ...
 	///       egg threshold editor             (separate mode)
 	/// </summary>
-	public sealed class AdvancedCritterSensorSideScreen : SideScreenContent, IRender200ms
+	public sealed class MultichannelCritterSensorSideScreen : SideScreenContent, IRender200ms
 	{
 		private static readonly FieldInfo SideScreensField = AccessTools.Field(typeof(DetailsScreen), "sideScreens");
 		private static readonly FieldInfo CurrentValueField = AccessTools.Field(typeof(ThresholdSwitchSideScreen), "currentValue");
@@ -88,7 +88,7 @@ namespace AdvancedCritterSensor
 			public ThresholdBlock threshold;
 		}
 
-		private AdvancedCritterSensor target;
+		private MultichannelCritterSensor target;
 		private bool built;
 		private bool discoverHooked;
 
@@ -102,7 +102,7 @@ namespace AdvancedCritterSensor
 
 		public override bool IsValidForTarget(GameObject go)
 		{
-			return go != null && go.GetComponent<AdvancedCritterSensor>() != null;
+			return go != null && go.GetComponent<MultichannelCritterSensor>() != null;
 		}
 
 		public override string GetTitle()
@@ -118,7 +118,7 @@ namespace AdvancedCritterSensor
 		public override void SetTarget(GameObject go)
 		{
 			base.SetTarget(go);
-			target = go != null ? go.GetComponent<AdvancedCritterSensor>() : null;
+			target = go != null ? go.GetComponent<MultichannelCritterSensor>() : null;
 			if (target == null)
 				return;
 			EnsureBuilt();
@@ -163,7 +163,7 @@ namespace AdvancedCritterSensor
 			// ends up right-aligned with bare panel showing on the left. The cloned threshold
 			// editor is exactly 280 wide, so the root carries no horizontal margin; this
 			// screen's own rows inset themselves instead.
-			PPanel rootPanel = new PPanel("AdvancedCritterSensorRoot")
+			PPanel rootPanel = new PPanel("MultichannelCritterSensorRoot")
 			{
 				Direction = PanelDirection.Vertical,
 				Alignment = TextAnchor.UpperLeft,
@@ -312,7 +312,7 @@ namespace AdvancedCritterSensor
 			TreeFilterableSideScreenRow rowPrefab = treePrefab != null && RowPrefabField != null ? RowPrefabField.GetValue(treePrefab) as TreeFilterableSideScreenRow : null;
 			if (rowPrefab == null)
 			{
-				Debug.LogWarning("[AdvancedCritterSensor] Vanilla filter row prefab not found; species list unavailable");
+				Debug.LogWarning("[MultichannelCritterSensor] Vanilla filter row prefab not found; species list unavailable");
 				return;
 			}
 			GameObject rowGo = Util.KInstantiateUI(rowPrefab.gameObject, list.panel, force_active: true);
@@ -352,7 +352,7 @@ namespace AdvancedCritterSensor
 			ThresholdSwitchSideScreen prefab = FindSideScreenPrefab<ThresholdSwitchSideScreen>();
 			if (prefab == null)
 			{
-				Debug.LogWarning("[AdvancedCritterSensor] Vanilla ThresholdSwitchSideScreen prefab not found; threshold editor unavailable");
+				Debug.LogWarning("[MultichannelCritterSensor] Vanilla ThresholdSwitchSideScreen prefab not found; threshold editor unavailable");
 				return;
 			}
 

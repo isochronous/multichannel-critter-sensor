@@ -3,8 +3,8 @@
   <Import Project="$(MSBuildThisFileDirectory)..\..\common\oni-mod.props" />
 
   <PropertyGroup>
-    <AssemblyName>AdvancedCritterSensor</AssemblyName>
-    <RootNamespace>AdvancedCritterSensor</RootNamespace>
+    <AssemblyName>MultichannelCritterSensor</AssemblyName>
+    <RootNamespace>MultichannelCritterSensor</RootNamespace>
     <Version>0.1.0</Version>
     <UsePLib>true</UsePLib>
     <ReferenceUnityUI>true</ReferenceUnityUI>
