@@ -135,15 +135,6 @@ namespace MultichannelCritterSensor
 			base.OnSpawn();
 			EnsureLists();
 			RebuildSets();
-			// Placeholder art: the vanilla critter sensor turned 180 degrees about the cell
-			// centre (the anim origin is the cell's bottom edge, so the pivot is half a
-			// cell up). Rotation and Pivot are the same properties Rotatable uses for
-			// rotated buildings; unlike Offset they never re-register with the batcher.
-			if (animController != null)
-			{
-				animController.Pivot = new Vector3(0f, 0.5f, 0f);
-				animController.Rotation = 180f;
-			}
 			HookLogicTick(true);
 			Evaluate();
 			UpdateVisualState(force: true);

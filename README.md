@@ -2,7 +2,7 @@
 
 An [Oxygen Not Included](https://www.klei.com/games/oxygen-not-included) mod that adds a **Multichannel Critter Sensor**: a room-based critter/egg counter that outputs over an **Automation Ribbon** and lets you choose exactly which species and egg types to count.
 
-Status: **work in progress**. The building uses the vanilla critter sensor art flipped upside down as placeholder art.
+Status: **work in progress**, with custom art: the sprite in `publish/sprite-large.png` is turned into the building's kanim (`src/MultichannelCritterSensor/anim/assets/multichannel_critter_sensor/`) by `common/tools/MakeKanim`, and drives the in-game sprite, construction ghost, and build-menu icon.
 
 ## What it does
 
@@ -25,7 +25,7 @@ Unlocked by **Multiplexing** (two research tiers past the vanilla sensor's Anima
 
 ## Publishing
 
-Not yet on the Steam Workshop. `publish/content` holds the upload set (DLL, `mod.yaml`, `mod_info.yaml`, `preview.png`) and `publish/workshop-description.txt` the Steam-markup description. Publish with Klei's **Oxygen Not Included Uploader** (Steam Library > Tools) pointed at `publish/content`, or `common/tools/WorkshopUpload`, never with steamcmd; see the [oni-mods-common README](https://github.com/isochronous/oni-mods-common#publishing-to-the-steam-workshop) for why. The preview is composed from the game's sensor sprite with `common/tools/MakePreview`.
+Not yet on the Steam Workshop. `publish/content` holds the upload set (DLL, `mod.yaml`, `mod_info.yaml`, `preview.png`) and `publish/workshop-description.txt` the Steam-markup description. Publish with Klei's **Oxygen Not Included Uploader** (Steam Library > Tools) pointed at `publish/content`, or `common/tools/WorkshopUpload`, never with steamcmd; see the [oni-mods-common README](https://github.com/isochronous/oni-mods-common#publishing-to-the-steam-workshop) for why. The preview is composed from `publish/sprite-small.png` with `common/tools/MakePreview`.
 
 ## Building
 

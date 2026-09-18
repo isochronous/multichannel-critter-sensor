@@ -6,8 +6,8 @@ using UnityEngine;
 namespace MultichannelCritterSensor
 {
 	/// <summary>
-	/// Building definition: a 1x1 sensor that reuses the vanilla critter sensor art
-	/// (flipped vertically as placeholder art) and exposes a single 4-bit ribbon output.
+	/// Building definition: a 1x1 sensor with its own kanim (anim/assets/multichannel_critter_sensor,
+	/// generated from the sprite with common/tools/MakeKanim) and a single 4-bit ribbon output.
 	/// </summary>
 	public sealed class MultichannelCritterSensorConfig : IBuildingConfig
 	{
@@ -15,7 +15,7 @@ namespace MultichannelCritterSensor
 
 		public override BuildingDef CreateBuildingDef()
 		{
-			BuildingDef def = BuildingTemplates.CreateBuildingDef(ID, 1, 1, "critter_sensor_kanim", 30, 30f,
+			BuildingDef def = BuildingTemplates.CreateBuildingDef(ID, 1, 1, "multichannel_critter_sensor_kanim", 30, 30f,
 				new float[] { 50f, 50f },
 				new string[] { MATERIALS.REFINED_METALS[0], MATERIALS.PLASTICS[0] },
 				1600f, BuildLocationRule.Anywhere,
