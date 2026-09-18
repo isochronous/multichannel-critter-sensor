@@ -2,7 +2,7 @@
 
 An [Oxygen Not Included](https://www.klei.com/games/oxygen-not-included) mod that adds a **Multichannel Critter Sensor**: a room-based critter/egg counter that outputs over an **Automation Ribbon** and lets you choose exactly which species and egg types to count.
 
-Status: **work in progress**, with custom art: the sprite in `publish/sprite-large.png` is turned into the building's kanim (`src/MultichannelCritterSensor/anim/assets/multichannel_critter_sensor/`) by `common/tools/MakeKanim`, and drives the in-game sprite, construction ghost, and build-menu icon.
+Status: **work in progress**, with custom art: the sprite in `publish/sprite-small.png` (128 px, about the game's native resolution for a one-cell building) is turned into the building's kanim (`src/MultichannelCritterSensor/anim/assets/multichannel_critter_sensor/`) by `common/tools/MakeKanim`, and drives the in-game sprite, construction ghost, and build-menu icon.
 
 ## What it does
 
