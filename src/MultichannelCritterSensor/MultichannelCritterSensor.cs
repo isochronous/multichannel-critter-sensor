@@ -107,7 +107,7 @@ namespace MultichannelCritterSensor
 		private bool pulseRising;
 		private bool pulseFalling;
 		private bool logicTickHooked;
-		private bool wasOn;
+		private string currentAnim;
 		private int outputValue = -1;
 
 		public int CritterCount { get; private set; }
@@ -183,8 +183,11 @@ namespace MultichannelCritterSensor
 			EnsureLists();
 			RebuildSets();
 			lastTotal = -1;
-			if (isSpawned)
-				Evaluate();
+			if (!isSpawned)
+				return;
+			Evaluate();
+			// A mode switch can leave the output value as it was yet change which animation fits.
+			UpdateVisualState();
 		}
 
 		public bool IsSpeciesSelected(bool critters, Tag tag)
@@ -388,19 +391,27 @@ namespace MultichannelCritterSensor
 			UpdateStatus();
 		}
 
+		/// <summary>
+		/// One looping animation per signal state (see tools/make_art.py): the left antenna and
+		/// the paw prints follow bit 0, the right antenna and the egg follow bit 1. In combined
+		/// mode bit 0 covers both kinds, so both antennae light up.
+		/// </summary>
 		private void UpdateVisualState(bool force = false)
 		{
-			bool on = IsOn;
-			if (!force && wasOn == on)
-				return;
-			wasOn = on;
-			if (animController == null)
-				return;
-			animController.Play(on ? "on_pre" : "on_pst");
-			if (on)
-				animController.Queue("on", KAnim.PlayMode.Loop);
+			bool primary = (OutputValue & (1 << PrimaryBit)) != 0;
+			bool eggs = (OutputValue & (1 << EggBit)) != 0;
+			string anim;
+			if (!separateThresholds)
+				anim = primary ? "on_combined" : "off";
+			else if (primary)
+				anim = eggs ? "on_both" : "on_critter";
 			else
-				animController.Queue("off");
+				anim = eggs ? "on_egg" : "off";
+			if (!force && anim == currentAnim)
+				return;
+			currentAnim = anim;
+			if (animController != null)
+				animController.Play(anim, anim == "off" ? KAnim.PlayMode.Once : KAnim.PlayMode.Loop);
 		}
 
 		private void UpdateStatus()
