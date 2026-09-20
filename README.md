@@ -25,7 +25,7 @@ Unlocked by **Multiplexing** (two research tiers past the vanilla sensor's Anima
 
 ## Publishing
 
-Not yet on the Steam Workshop. `publish/content` holds the upload set (DLL, `mod.yaml`, `mod_info.yaml`, `preview.png`) and `publish/workshop-description.txt` the Steam-markup description. Publish with Klei's **Oxygen Not Included Uploader** (Steam Library > Tools) pointed at `publish/content`, or `common/tools/WorkshopUpload`, never with steamcmd; see the [oni-mods-common README](https://github.com/isochronous/oni-mods-common#publishing-to-the-steam-workshop) for why. The preview is composed from `publish/sprite-small.png` with `common/tools/MakePreview`.
+Steam Workshop item **3804039425**. `publish/content` holds the upload set (DLL, `mod.yaml`, `mod_info.yaml`, `preview.png`, `anim/`) and `publish/workshop-description.txt` the Steam-markup description. Update it by zipping the contents of `publish/content` and running `common/tools/WorkshopUpload update 3804039425 <zip> publish/preview.png`, or with Klei's **Oxygen Not Included Uploader** (Steam Library > Tools), never with steamcmd; see the [oni-mods-common README](https://github.com/isochronous/oni-mods-common#publishing-to-the-steam-workshop) for why. `publish/preview.png` is `publish/logo.jpg` resized to 512x512.
 
 ## Building
 
