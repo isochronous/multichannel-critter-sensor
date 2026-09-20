@@ -23,10 +23,6 @@ The sensor counts critters and eggs in its room, like the vanilla Critter Sensor
 
 Unlocked by **Multiplexing** (two research tiers past the vanilla sensor's Animal Control). Costs 50 kg Refined Metal and 50 kg Plastic. Found under Automation > Sensors, next to the vanilla Critter Sensor.
 
-## Publishing
-
-Steam Workshop item **3804039425**. `publish/content` holds the upload set (DLL, `mod.yaml`, `mod_info.yaml`, `preview.png`, `anim/`) and `publish/workshop-description.txt` the Steam-markup description. Update it by zipping the contents of `publish/content` and running `common/tools/WorkshopUpload update 3804039425 <zip> publish/preview.png`, or with Klei's **Oxygen Not Included Uploader** (Steam Library > Tools), never with steamcmd; see the [oni-mods-common README](https://github.com/isochronous/oni-mods-common#publishing-to-the-steam-workshop) for why. `publish/preview.png` is `publish/logo.jpg` resized to 512x512.
-
 ## Building
 
 Requires the .NET SDK (8+). Shared build configuration lives in the [oni-mods-common](https://github.com/isochronous/oni-mods-common) submodule, so clone with `--recurse-submodules` (or run `git submodule update --init`). The game DLLs are referenced directly from the game install; override the path if yours differs:
