@@ -23,6 +23,17 @@ The sensor counts critters and eggs in its room, like the vanilla Critter Sensor
 
 Unlocked by **Multiplexing** (two research tiers past the vanilla sensor's Animal Control). Costs 50 kg Refined Metal and 50 kg Plastic. Found under Automation > Sensors, next to the vanilla Critter Sensor.
 
+## Installing
+
+As a local mod:
+
+1. Download `MultichannelCritterSensor-<version>.zip` from the [latest release](https://github.com/isochronous/multichannel-critter-sensor/releases/latest).
+2. Extract it into a new folder named `MultichannelCritterSensor` inside the game's local mods folder, so that `mod.yaml` ends up directly inside it (create `local` if it does not exist):
+   - Windows: `Documents\Klei\OxygenNotIncluded\mods\local\MultichannelCritterSensor`
+   - Linux: `~/.config/unity3d/Klei/Oxygen Not Included/mods/local/MultichannelCritterSensor`
+   - macOS: `~/Library/Application Support/unity.Klei.Oxygen Not Included/mods/local/MultichannelCritterSensor`
+3. Start the game, enable the mod under **Mods** in the main menu, and let the game restart.
+
 ## Building
 
 Requires the .NET SDK (8+). Shared build configuration lives in the [oni-mods-common](https://github.com/isochronous/oni-mods-common) submodule, so clone with `--recurse-submodules` (or run `git submodule update --init`). The game DLLs are referenced directly from the game install; override the path if yours differs:
