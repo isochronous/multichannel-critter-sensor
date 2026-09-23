@@ -25,7 +25,7 @@ from PIL import Image, ImageDraw, ImageFilter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "common", "tools", "MakeKanim"))
-from kanim_writer import Sprite, write_kanim  # noqa: E402
+from kanim_writer import Sprite, place_outline, write_kanim  # noqa: E402
 
 NAME = "multichannel_critter_sensor"
 OUT = os.path.join(ROOT, "src", "MultichannelCritterSensor", "anim", "assets", NAME)
@@ -175,7 +175,7 @@ def main():
     box = mask.point(lambda v: 255 if v > 128 else 0).getbbox()
     print("visible screen (large px):", box)
 
-    symbols = {"body": [base], "place": [base], "ui": [base]}
+    symbols = {"body": [base], "place": [Sprite(place_outline(small), SIZE, SIZE)], "ui": [base]}
     positions = {}
 
     for side, (cx, cy, radius) in BALLS.items():
