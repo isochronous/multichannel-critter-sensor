@@ -2,7 +2,7 @@
 
 An [Oxygen Not Included](https://www.klei.com/games/oxygen-not-included) mod that adds a **Multichannel Critter Sensor**: a room-based critter/egg counter that outputs over an **Automation Ribbon** and lets you choose exactly which species and egg types to count.
 
-Status: **work in progress**, with custom animated art. `publish/sprite-small.png` (128 px, about the game's native resolution for a one-cell building) is the building and build-menu icon, and its white outline the construction ghost; `tools/make_art.py` lays the moving parts over it and writes the kanim under `src/MultichannelCritterSensor/anim/assets/multichannel_critter_sensor/`. As on the vanilla sensor, paw prints cross the visor and the antenna tips glow green while a signal is on: the left antenna and the prints follow the critter (or combined) threshold, the right antenna and a rocking egg on the right of the visor follow the egg threshold, and in combined mode both antennae light up.
+Status: **work in progress**. The art is by 3GuB, commissioned for this mod and used with permission: the kanim under `src/MultichannelCritterSensor/anim/assets/critter_sensor_advanced/` has an `off` pose, an `on` reaction the sensor plays once whenever it starts seeing something it tracks, and two 2-frame indicator anims (`meter_critter`, `meter_egg`) that the code pins in front of the body at the kanim's `meter_target_critter` and `meter_target_egg` symbols with the game's `MeterController`, frame 1 meaning that channel's signal is on. The critter indicator follows bit 0 and the egg indicator bit 1; in combined mode bit 0 covers both kinds, so both light up.
 
 ## What it does
 

@@ -107,7 +107,9 @@ namespace MultichannelCritterSensor
 		private bool pulseRising;
 		private bool pulseFalling;
 		private bool logicTickHooked;
-		private string currentAnim;
+		private bool sawSomething;
+		private MeterController critterMeter;
+		private MeterController eggMeter;
 		private int outputValue = -1;
 
 		public int CritterCount { get; private set; }
@@ -133,6 +135,13 @@ namespace MultichannelCritterSensor
 		protected override void OnSpawn()
 		{
 			base.OnSpawn();
+			if (animController != null)
+			{
+				// Per-channel indicators: 2-frame anims (frame 0 off, frame 1 on) that the kanim
+				// pins to its two target symbols, drawn in front of the body.
+				critterMeter = new MeterController(animController, "meter_target_critter", "meter_critter", Meter.Offset.Infront, Grid.SceneLayer.NoLayer);
+				eggMeter = new MeterController(animController, "meter_target_egg", "meter_egg", Meter.Offset.Infront, Grid.SceneLayer.NoLayer);
+			}
 			EnsureLists();
 			RebuildSets();
 			HookLogicTick(true);
@@ -346,6 +355,8 @@ namespace MultichannelCritterSensor
 			if (pulseFalling)
 				value |= 1 << FallingBit;
 			SetOutput(value);
+			// Seeing-something can change without the output changing; keep the body anim in step.
+			UpdateVisualState();
 		}
 
 		private static int CountTracked(List<KPrefabID> entities, bool all, HashSet<Tag> selected)
@@ -392,26 +403,20 @@ namespace MultichannelCritterSensor
 		}
 
 		/// <summary>
-		/// One looping animation per signal state (see tools/make_art.py): the left antenna and
-		/// the paw prints follow bit 0, the right antenna and the egg follow bit 1. In combined
-		/// mode bit 0 covers both kinds, so both antennae light up.
+		/// Body: "on" plays once (not looped) whenever the sensor starts seeing something it
+		/// tracks, "off" once it sees nothing. Indicators: the critter meter follows bit 0 and
+		/// the egg meter bit 1; in combined mode bit 0 covers both kinds, so both light up.
 		/// </summary>
 		private void UpdateVisualState(bool force = false)
 		{
 			bool primary = (OutputValue & (1 << PrimaryBit)) != 0;
 			bool eggs = (OutputValue & (1 << EggBit)) != 0;
-			string anim;
-			if (!separateThresholds)
-				anim = primary ? "on_combined" : "off";
-			else if (primary)
-				anim = eggs ? "on_both" : "on_critter";
-			else
-				anim = eggs ? "on_egg" : "off";
-			if (!force && anim == currentAnim)
-				return;
-			currentAnim = anim;
-			if (animController != null)
-				animController.Play(anim, anim == "off" ? KAnim.PlayMode.Once : KAnim.PlayMode.Loop);
+			bool seeing = TrackedTotal > 0;
+			if (animController != null && (force || seeing != sawSomething))
+				animController.Play(seeing ? "on" : "off", KAnim.PlayMode.Once);
+			sawSomething = seeing;
+			critterMeter?.SetPositionPercent(primary ? 1f : 0f);
+			eggMeter?.SetPositionPercent((separateThresholds ? eggs : primary) ? 1f : 0f);
 		}
 
 		private void UpdateStatus()
