@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- New Workshop preview image showing the sensor with both indicators lit.
+
 ## 0.2.2 - 2026-09-30
 
 - New building art by 3GuB, commissioned for this mod. Each channel has its own indicator: green lights and a slowly pulsing paw print while the critter signal is on, green lights and a pulsing egg while the egg signal is on (the two pulse out of step), and red lights while a signal is off.
