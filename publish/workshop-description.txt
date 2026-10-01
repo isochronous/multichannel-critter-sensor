@@ -11,11 +11,11 @@ The sensor counts critters and eggs in its room, like the vanilla Critter Sensor
 
 [h2]Filters and thresholds[/h2]
 [list]
-[*]Tick [i]Count Critters[/i] and pick species from the list of discovered baggable critters, or leave [i]All[/i] on so newly discovered species count automatically.
+[*]Tick [i]Count Critters[/i] and pick species from the list of discovered baggable critters.
 [*]Tick [i]Count Eggs[/i] and pick egg types the same way.
 [*]Thresholds use the vanilla threshold controls (above/below, number field, slider, 0 to 64), either one combined threshold or separate critter and egg thresholds.
-[*]Connect the output with an Automation Ribbon; a plain wire overloads when more than one bit is on, as with the Ribbon Writer.
-[*]Supports the copy-settings tool; all settings are saved with the building.
+[*]Connect the output with an Automation Ribbon
+[*]Supports the copy-settings tool and pre-configuration via Blueprints Expanded; all settings are saved with the building.
 [/list]
 
 Unlocked by [b]Multiplexing[/b]. Costs 50 kg Refined Metal and 50 kg Plastic. Found under Automation > Sensors, next to the vanilla Critter Sensor.
@@ -26,6 +26,6 @@ Works with the base game and all DLCs, on build 744825 (U59) or newer. No depend
 [h2]Art[/h2]
 Building art by 3GuB, commissioned for this mod and used with permission. Thank you!
 
-Developed by a professional software developer with assistance from Claude Code.
+Developed by a professional software developer (hello!) with assistance from Claude Code.
 
 Source and issue tracker: https://github.com/isochronous/multichannel-critter-sensor
