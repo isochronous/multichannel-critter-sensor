@@ -423,13 +423,31 @@ namespace MultichannelCritterSensor
 			SetMeter(eggMeter, "meter_egg", ref eggMeterOn, separateThresholds ? eggs : primary, force);
 		}
 
-		/// <summary>Switches a meter between its "_off" and looping "_on" anim, only on change so the pulse keeps its phase.</summary>
+		/// <summary>
+		/// Switches a meter between its "_off" anim and its "_on" loop, only on change so the pulse
+		/// keeps its phase. Coming on plays "_on_pre" first: the lights flicker up with the vanilla
+		/// critter sensor's curve (as the artist intended), then the loop takes over. A meter that
+		/// is already on when the building spawns skips the flicker.
+		/// </summary>
 		private static void SetMeter(MeterController meter, string prefix, ref bool wasOn, bool on, bool force)
 		{
 			if (meter?.meterController == null || (!force && on == wasOn))
 				return;
+			bool flicker = on && !wasOn && !force;
 			wasOn = on;
-			meter.meterController.Play(prefix + (on ? "_on" : "_off"), on ? KAnim.PlayMode.Loop : KAnim.PlayMode.Once);
+			KBatchedAnimController controller = meter.meterController;
+			if (!on)
+			{
+				controller.Play(prefix + "_off", KAnim.PlayMode.Once);
+				return;
+			}
+			if (flicker)
+			{
+				controller.Play(prefix + "_on_pre", KAnim.PlayMode.Once);
+				controller.Queue(prefix + "_on", KAnim.PlayMode.Loop);
+			}
+			else
+				controller.Play(prefix + "_on", KAnim.PlayMode.Loop);
 		}
 
 		private void UpdateStatus()
