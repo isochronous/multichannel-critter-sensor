@@ -110,6 +110,8 @@ namespace MultichannelCritterSensor
 		private bool sawSomething;
 		private MeterController critterMeter;
 		private MeterController eggMeter;
+		private bool critterMeterOn;
+		private bool eggMeterOn;
 		private int outputValue = -1;
 
 		public int CritterCount { get; private set; }
@@ -137,10 +139,11 @@ namespace MultichannelCritterSensor
 			base.OnSpawn();
 			if (animController != null)
 			{
-				// Per-channel indicators: 2-frame anims (frame 0 off, frame 1 on) that the kanim
-				// pins to its two target symbols, drawn in front of the body.
-				critterMeter = new MeterController(animController, "meter_target_critter", "meter_critter", Meter.Offset.Infront, Grid.SceneLayer.NoLayer);
-				eggMeter = new MeterController(animController, "meter_target_egg", "meter_egg", Meter.Offset.Infront, Grid.SceneLayer.NoLayer);
+				// Per-channel indicators, pinned to the kanim's two target symbols in front of the
+				// body. Each has a static "_off" anim and a looping "_on" anim with its paw or egg
+				// pulsing (the egg half a period out of phase), played on the meter's own controller.
+				critterMeter = new MeterController(animController, "meter_target_critter", "meter_critter_off", Meter.Offset.Infront, Grid.SceneLayer.NoLayer);
+				eggMeter = new MeterController(animController, "meter_target_egg", "meter_egg_off", Meter.Offset.Infront, Grid.SceneLayer.NoLayer);
 			}
 			EnsureLists();
 			RebuildSets();
@@ -406,6 +409,7 @@ namespace MultichannelCritterSensor
 		/// Body: "on" plays once (not looped) whenever the sensor starts seeing something it
 		/// tracks, "off" once it sees nothing. Indicators: the critter meter follows bit 0 and
 		/// the egg meter bit 1; in combined mode bit 0 covers both kinds, so both light up.
+		/// On = green lights and a pulsing paw or egg; off = red lights.
 		/// </summary>
 		private void UpdateVisualState(bool force = false)
 		{
@@ -415,8 +419,17 @@ namespace MultichannelCritterSensor
 			if (animController != null && (force || seeing != sawSomething))
 				animController.Play(seeing ? "on" : "off", KAnim.PlayMode.Once);
 			sawSomething = seeing;
-			critterMeter?.SetPositionPercent(primary ? 1f : 0f);
-			eggMeter?.SetPositionPercent((separateThresholds ? eggs : primary) ? 1f : 0f);
+			SetMeter(critterMeter, "meter_critter", ref critterMeterOn, primary, force);
+			SetMeter(eggMeter, "meter_egg", ref eggMeterOn, separateThresholds ? eggs : primary, force);
+		}
+
+		/// <summary>Switches a meter between its "_off" and looping "_on" anim, only on change so the pulse keeps its phase.</summary>
+		private static void SetMeter(MeterController meter, string prefix, ref bool wasOn, bool on, bool force)
+		{
+			if (meter?.meterController == null || (!force && on == wasOn))
+				return;
+			wasOn = on;
+			meter.meterController.Play(prefix + (on ? "_on" : "_off"), on ? KAnim.PlayMode.Loop : KAnim.PlayMode.Once);
 		}
 
 		private void UpdateStatus()
