@@ -30,7 +30,6 @@ namespace MultichannelCritterSensor
 			"Bit 4: " + Green + " pulse when the tracked count falls";
 		public static readonly string PortInactive = "Otherwise, sends a " + Red + " on each bit";
 
-		public const string SideScreenTitleKey = "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.TITLE";
 		public const string SideScreenTitle = "Multichannel Critter Sensor";
 
 		public const string ModeLabel = "Thresholds:";
@@ -81,7 +80,6 @@ namespace MultichannelCritterSensor
 			Strings.Add(PrefabKey + "NAME", Name);
 			Strings.Add(PrefabKey + "DESC", Desc);
 			Strings.Add(PrefabKey + "EFFECT", Effect);
-			Strings.Add(SideScreenTitleKey, SideScreenTitle);
 			foreach (LocString loc in new[] { TitleLoc, ValueNameCount, ValueNameCritters, ValueNameEggs, NoUnits })
 				Strings.Add(loc.key.String, loc.text);
 		}

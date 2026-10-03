@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using KSerialization;
@@ -198,8 +197,6 @@ namespace MultichannelCritterSensor
 			if (!isSpawned)
 				return;
 			Evaluate();
-			// A mode switch can leave the output value as it was yet change which animation fits.
-			UpdateVisualState();
 		}
 
 		public bool IsSpeciesSelected(bool critters, Tag tag)
@@ -401,7 +398,6 @@ namespace MultichannelCritterSensor
 			outputValue = value;
 			if (ports != null)
 				ports.SendSignal(PortId, value);
-			UpdateVisualState();
 			UpdateStatus();
 		}
 

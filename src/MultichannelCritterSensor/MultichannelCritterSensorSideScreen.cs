@@ -16,7 +16,7 @@ namespace MultichannelCritterSensor
 	///
 	/// Layout (top to bottom):
 	///   current count line
-	///   [Combined threshold] [Separate thresholds]
+	///   Thresholds: [Combined] [Separate]
 	///   combined threshold editor            (combined mode)
 	///   [x] Count Critters
 	///       [v] All critters                 (vanilla filter row, collapsed by default)
@@ -41,6 +41,12 @@ namespace MultichannelCritterSensor
 		private static readonly FieldInfo ElementNameField = AccessTools.Field(typeof(TreeFilterableSideScreenElement), "elementName");
 		private static readonly FieldInfo ElementCheckField = AccessTools.Field(typeof(TreeFilterableSideScreenElement), "checkBox");
 		private static readonly FieldInfo ElementImageField = AccessTools.Field(typeof(TreeFilterableSideScreenElement), "elementImg");
+
+		/// <summary>A reflected field's value, or null when the game no longer has the field.</summary>
+		private static T Get<T>(FieldInfo field, object target) where T : class
+		{
+			return field != null && target != null ? field.GetValue(target) as T : null;
+		}
 
 		private const int Indent = 24;
 		/// <summary>Horizontal inset for this screen's own rows; the cloned vanilla widgets carry their own.</summary>
@@ -77,6 +83,8 @@ namespace MultichannelCritterSensor
 			public LayoutElement wrapperLayout;
 			/// <summary>Scroll content; holds the single vanilla filter row.</summary>
 			public GameObject panel;
+			/// <summary>"Critter" or "Egg": the name prefix of this list's widgets.</summary>
+			public string Prefix => critters ? "Critter" : "Egg";
 			// Vanilla row parts.
 			public GameObject row;
 			public MultiToggle rowCheck;
@@ -160,8 +168,8 @@ namespace MultichannelCritterSensor
 
 			// The frame must not report a preferred width above the vanilla side screen's
 			// 280px: the details panel grows to fit, while its Options header stays 280 and
-			// ends up right-aligned with bare panel showing on the left. The cloned threshold
-			// editor is exactly 280 wide, so the root carries no horizontal margin; this
+			// ends up right-aligned with bare panel showing on the left. So the root carries
+			// no horizontal margin (the cloned threshold editor stretches to it) and this
 			// screen's own rows inset themselves instead.
 			PPanel rootPanel = new PPanel("MultichannelCritterSensorRoot")
 			{
@@ -234,7 +242,7 @@ namespace MultichannelCritterSensor
 
 		private void AddSpeciesSection(PPanel rootPanel, SpeciesList list, string label, string tooltip)
 		{
-			string prefix = list.critters ? "Critter" : "Egg";
+			string prefix = list.Prefix;
 			rootPanel.AddChild(new PCheckBox("Count" + prefix)
 			{
 				Text = label,
@@ -271,7 +279,7 @@ namespace MultichannelCritterSensor
 		/// </summary>
 		private void CreateScrollList(SpeciesList list)
 		{
-			string prefix = list.critters ? "Critter" : "Egg";
+			string prefix = list.Prefix;
 			list.wrapper = PUIElements.CreateUI(root, prefix + "ListWrapper");
 			list.wrapper.transform.SetSiblingIndex(list.toggle.transform.GetSiblingIndex() + 1);
 			list.wrapperLayout = list.wrapper.AddComponent<LayoutElement>();
@@ -309,20 +317,20 @@ namespace MultichannelCritterSensor
 		private void CreateFilterRow(SpeciesList list)
 		{
 			TreeFilterableSideScreen treePrefab = FindSideScreenPrefab<TreeFilterableSideScreen>();
-			TreeFilterableSideScreenRow rowPrefab = treePrefab != null && RowPrefabField != null ? RowPrefabField.GetValue(treePrefab) as TreeFilterableSideScreenRow : null;
+			TreeFilterableSideScreenRow rowPrefab = Get<TreeFilterableSideScreenRow>(RowPrefabField, treePrefab);
 			if (rowPrefab == null)
 			{
 				Debug.LogWarning("[MultichannelCritterSensor] Vanilla filter row prefab not found; species list unavailable");
 				return;
 			}
 			GameObject rowGo = Util.KInstantiateUI(rowPrefab.gameObject, list.panel, force_active: true);
-			rowGo.name = (list.critters ? "Critter" : "Egg") + "FilterRow";
+			rowGo.name = list.Prefix + "FilterRow";
 			TreeFilterableSideScreenRow rowScript = rowGo.GetComponent<TreeFilterableSideScreenRow>();
-			LocText name = RowNameField.GetValue(rowScript) as LocText;
-			list.rowGroup = RowGroupField.GetValue(rowScript) as GameObject;
-			list.rowCheck = RowCheckField.GetValue(rowScript) as MultiToggle;
-			list.rowArrow = RowArrowField.GetValue(rowScript) as MultiToggle;
-			list.rowBg = RowBgField.GetValue(rowScript) as KImage;
+			LocText name = Get<LocText>(RowNameField, rowScript);
+			list.rowGroup = Get<GameObject>(RowGroupField, rowScript);
+			list.rowCheck = Get<MultiToggle>(RowCheckField, rowScript);
+			list.rowArrow = Get<MultiToggle>(RowArrowField, rowScript);
+			list.rowBg = Get<KImage>(RowBgField, rowScript);
 			UnityEngine.Object.DestroyImmediate(rowScript);
 
 			if (name != null)
@@ -336,7 +344,12 @@ namespace MultichannelCritterSensor
 					tip.SetSimpleTooltip(list.critters ? ModStrings.AllCrittersTooltip : ModStrings.AllEggsTooltip);
 			}
 			if (list.rowArrow != null)
+			{
 				list.rowArrow.onClick = () => SetExpanded(captured, !captured.expanded);
+				ToolTip tip = list.rowArrow.GetComponent<ToolTip>();
+				if (tip != null)
+					tip.SetSimpleTooltip(ModStrings.ExpanderTooltip);
+			}
 			// Remove any placeholder elements the prefab may carry.
 			if (list.rowGroup != null)
 				for (int i = list.rowGroup.transform.childCount - 1; i >= 0; i--)
@@ -380,7 +393,7 @@ namespace MultichannelCritterSensor
 			// has its own one-line header instead. Keep the label's GameObject active (other
 			// mods, e.g. CustomizeBuildings, address the editor's labels by child index) and
 			// hide it by disabling the text component and taking it out of the layout.
-			LocText currentValue = CurrentValueField != null ? CurrentValueField.GetValue(block.screen) as LocText : null;
+			LocText currentValue = Get<LocText>(CurrentValueField, block.screen);
 			if (currentValue != null)
 			{
 				currentValue.enabled = false;
@@ -473,7 +486,7 @@ namespace MultichannelCritterSensor
 			list.elements.Clear();
 
 			TreeFilterableSideScreen treePrefab = FindSideScreenPrefab<TreeFilterableSideScreen>();
-			TreeFilterableSideScreenElement elementPrefab = treePrefab != null && ElementPrefabField != null ? ElementPrefabField.GetValue(treePrefab) as TreeFilterableSideScreenElement : null;
+			TreeFilterableSideScreenElement elementPrefab = Get<TreeFilterableSideScreenElement>(ElementPrefabField, treePrefab);
 			if (elementPrefab == null)
 				return;
 
@@ -484,9 +497,9 @@ namespace MultichannelCritterSensor
 				GameObject go = Util.KInstantiateUI(elementPrefab.gameObject, list.rowGroup, force_active: true);
 				go.name = tag.Name;
 				TreeFilterableSideScreenElement script = go.GetComponent<TreeFilterableSideScreenElement>();
-				LocText name = ElementNameField.GetValue(script) as LocText;
-				MultiToggle check = ElementCheckField.GetValue(script) as MultiToggle;
-				KImage image = ElementImageField.GetValue(script) as KImage;
+				LocText name = Get<LocText>(ElementNameField, script);
+				MultiToggle check = Get<MultiToggle>(ElementCheckField, script);
+				KImage image = Get<KImage>(ElementImageField, script);
 				UnityEngine.Object.DestroyImmediate(script);
 
 				if (name != null)
