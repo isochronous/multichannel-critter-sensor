@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- The expand arrow next to "All critters" and "All eggs" now shows a tooltip.
+
 ## 0.2.3 - 2026-09-30
 
 - New Workshop preview image showing the sensor with both indicators lit.
