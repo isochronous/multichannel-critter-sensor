@@ -1,4 +1,5 @@
 using HarmonyLib;
+using Isochronous;
 using KMod;
 using PeterHan.PLib.Core;
 
@@ -10,7 +11,8 @@ namespace MultichannelCritterSensor
 		{
 			base.OnLoad(harmony);
 			PUtil.InitLibrary(false);
-			ModStrings.Register();
+			Translations.Register(harmony, typeof(ModStrings));
+			ThresholdAdapter.RegisterNoUnits();
 			Debug.Log("[MultichannelCritterSensor] Loaded version " + typeof(MultichannelCritterSensorMod).Assembly.GetName().Version);
 		}
 	}

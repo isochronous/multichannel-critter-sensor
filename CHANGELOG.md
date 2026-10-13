@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Chinese (Simplified) translation. Translations load from translations/<locale>.po; the template for other languages is translations/MultichannelCritterSensor.pot.
+
 ## 0.2.4 - 2026-10-03
 
 - The indicator lights flicker briefly as a channel comes on, following the artist's animation curves, and the paw or egg fades in with them.

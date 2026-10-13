@@ -5,6 +5,7 @@ using HarmonyLib;
 using PeterHan.PLib.UI;
 using UnityEngine;
 using UnityEngine.UI;
+using SIDE_SCREEN = MultichannelCritterSensor.ModStrings.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN;
 
 namespace MultichannelCritterSensor
 {
@@ -115,7 +116,7 @@ namespace MultichannelCritterSensor
 
 		public override string GetTitle()
 		{
-			return ModStrings.SideScreenTitle;
+			return SIDE_SCREEN.TITLE;
 		}
 
 		public override int GetSideScreenSortOrder()
@@ -202,22 +203,22 @@ namespace MultichannelCritterSensor
 			};
 			modeRow.AddChild(new PLabel("ModeLabel")
 			{
-				Text = ModStrings.ModeLabel,
+				Text = SIDE_SCREEN.MODE_LABEL,
 				TextStyle = PUITuning.Fonts.TextDarkStyle,
 				TextAlignment = TextAnchor.MiddleLeft,
 			});
 			modeRow.AddChild(new PButton("Combined")
 			{
-				Text = ModStrings.ModeCombined,
-				ToolTip = ModStrings.ModeCombinedTooltip,
+				Text = SIDE_SCREEN.MODE_COMBINED,
+				ToolTip = SIDE_SCREEN.MODE_COMBINED_TOOLTIP,
 				Margin = new RectOffset(8, 8, 5, 5),
 				FlexSize = Vector2.right,
 				OnClick = _ => SetMode(false),
 			}.AddOnRealize(go => combinedButton = go));
 			modeRow.AddChild(new PButton("Separate")
 			{
-				Text = ModStrings.ModeSeparate,
-				ToolTip = ModStrings.ModeSeparateTooltip,
+				Text = SIDE_SCREEN.MODE_SEPARATE,
+				ToolTip = SIDE_SCREEN.MODE_SEPARATE_TOOLTIP,
 				Margin = new RectOffset(8, 8, 5, 5),
 				FlexSize = Vector2.right,
 				OnClick = _ => SetMode(true),
@@ -227,8 +228,8 @@ namespace MultichannelCritterSensor
 			combined = new ThresholdBlock();
 			rootPanel.AddChild(Host("CombinedThreshold", 0).AddOnRealize(go => combined.host = go));
 
-			AddSpeciesSection(rootPanel, critters, STRINGS.BUILDINGS.PREFABS.LOGICCRITTERCOUNTSENSOR.COUNT_CRITTER_LABEL, ModStrings.CountCrittersTooltip);
-			AddSpeciesSection(rootPanel, eggs, STRINGS.BUILDINGS.PREFABS.LOGICCRITTERCOUNTSENSOR.COUNT_EGG_LABEL, ModStrings.CountEggsTooltip);
+			AddSpeciesSection(rootPanel, critters, STRINGS.BUILDINGS.PREFABS.LOGICCRITTERCOUNTSENSOR.COUNT_CRITTER_LABEL, SIDE_SCREEN.COUNT_CRITTERS_TOOLTIP);
+			AddSpeciesSection(rootPanel, eggs, STRINGS.BUILDINGS.PREFABS.LOGICCRITTERCOUNTSENSOR.COUNT_EGG_LABEL, SIDE_SCREEN.COUNT_EGGS_TOOLTIP);
 
 			root = rootPanel.AddTo(gameObject);
 
@@ -334,21 +335,21 @@ namespace MultichannelCritterSensor
 			UnityEngine.Object.DestroyImmediate(rowScript);
 
 			if (name != null)
-				name.text = list.critters ? ModStrings.AllCritters : ModStrings.AllEggs;
+				name.text = list.critters ? SIDE_SCREEN.ALL_CRITTERS : SIDE_SCREEN.ALL_EGGS;
 			SpeciesList captured = list;
 			if (list.rowCheck != null)
 			{
 				list.rowCheck.onClick = () => ToggleAll(captured);
 				ToolTip tip = list.rowCheck.GetComponent<ToolTip>();
 				if (tip != null)
-					tip.SetSimpleTooltip(list.critters ? ModStrings.AllCrittersTooltip : ModStrings.AllEggsTooltip);
+					tip.SetSimpleTooltip(list.critters ? SIDE_SCREEN.ALL_CRITTERS_TOOLTIP : SIDE_SCREEN.ALL_EGGS_TOOLTIP);
 			}
 			if (list.rowArrow != null)
 			{
 				list.rowArrow.onClick = () => SetExpanded(captured, !captured.expanded);
 				ToolTip tip = list.rowArrow.GetComponent<ToolTip>();
 				if (tip != null)
-					tip.SetSimpleTooltip(ModStrings.ExpanderTooltip);
+					tip.SetSimpleTooltip(SIDE_SCREEN.EXPANDER_TOOLTIP);
 			}
 			// Remove any placeholder elements the prefab may carry.
 			if (list.rowGroup != null)
@@ -762,15 +763,15 @@ namespace MultichannelCritterSensor
 				return;
 			string text;
 			if (!target.InRoom)
-				text = ModStrings.NotInRoom;
+				text = SIDE_SCREEN.NOT_IN_ROOM;
 			else if (target.countCritters && target.countEggs)
-				text = string.Format(ModStrings.CurrentCritters, target.CritterCount) + "    " + string.Format(ModStrings.CurrentEggs, target.EggCount);
+				text = string.Format(SIDE_SCREEN.CURRENT_CRITTERS, target.CritterCount) + "    " + string.Format(SIDE_SCREEN.CURRENT_EGGS, target.EggCount);
 			else if (target.countCritters)
-				text = string.Format(ModStrings.CurrentCritters, target.CritterCount);
+				text = string.Format(SIDE_SCREEN.CURRENT_CRITTERS, target.CritterCount);
 			else if (target.countEggs)
-				text = string.Format(ModStrings.CurrentEggs, target.EggCount);
+				text = string.Format(SIDE_SCREEN.CURRENT_EGGS, target.EggCount);
 			else
-				text = ModStrings.NotCounting;
+				text = SIDE_SCREEN.NOT_COUNTING;
 			PUIElements.SetText(header, text);
 		}
 	}

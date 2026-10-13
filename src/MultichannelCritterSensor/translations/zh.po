@@ -1,0 +1,168 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included\n"
+"POT Version: 2.0\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.DESC
+msgctxt "STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.DESC"
+msgid "Tracking exactly which critters and eggs share a room allows for much finer control over automated ranching."
+msgstr "精确掌握房间内有哪些小动物和蛋，可以更精细地控制自动化畜牧。"
+
+#. STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.EFFECT
+msgctxt "STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.EFFECT"
+msgid "Counts the selected <link=\"CREATURES\">Critters</link> and Eggs in its room and writes the results to an <link=\"LOGICRIBBON\">Automation Ribbon</link>:\n\n<b>Bit 1</b>: <b><style=\"logic_on\">Green Signal</style></b> when the count passes the threshold\n<b>Bit 2</b>: <b><style=\"logic_on\">Green Signal</style></b> when the egg count passes its own threshold (separate-thresholds mode only)\n<b>Bit 3</b>: a brief <b><style=\"logic_on\">Green Signal</style></b> pulse each time the tracked count rises\n<b>Bit 4</b>: a brief <b><style=\"logic_on\">Green Signal</style></b> pulse each time the tracked count falls\n\n<link=\"LOGICRIBBON\">Automation Ribbon</link> must be used as the output wire to avoid overloading."
+msgstr "计算其所在房间内选定的<link=\"CREATURES\">小动物</link>和蛋的数量，并将结果写入<link=\"LOGICRIBBON\">信号线组</link>：\n\n<b>位1</b>：数量越过阈值时输出<b><style=\"logic_on\">绿色信号</style></b>\n<b>位2</b>：蛋数量越过其独立阈值时输出<b><style=\"logic_on\">绿色信号</style></b>（仅限独立阈值模式）\n<b>位3</b>：每当所追踪的数量上升时输出一次短暂的<b><style=\"logic_on\">绿色信号</style></b>脉冲\n<b>位4</b>：每当所追踪的数量下降时输出一次短暂的<b><style=\"logic_on\">绿色信号</style></b>脉冲\n\n输出必须用<link=\"LOGICRIBBON\">信号线组</link>以免过载。"
+
+#. STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.LOGIC_PORT
+msgctxt "STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.LOGIC_PORT"
+msgid "Critter Count (4-Bit)"
+msgstr "小动物数量（四位）"
+
+#. STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.LOGIC_PORT_ACTIVE
+msgctxt "STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.LOGIC_PORT_ACTIVE"
+msgid "Bit 1: <b><style=\"logic_on\">Green Signal</style></b> if the tracked count is past the threshold\nBit 2: <b><style=\"logic_on\">Green Signal</style></b> if the egg count is past its threshold (separate mode)\nBit 3: <b><style=\"logic_on\">Green Signal</style></b> pulse when the tracked count rises\nBit 4: <b><style=\"logic_on\">Green Signal</style></b> pulse when the tracked count falls"
+msgstr "位1：所追踪的数量越过阈值时输出<b><style=\"logic_on\">绿色信号</style></b>\n位2：蛋数量越过其阈值时输出<b><style=\"logic_on\">绿色信号</style></b>（独立模式）\n位3：所追踪的数量上升时输出<b><style=\"logic_on\">绿色信号</style></b>脉冲\n位4：所追踪的数量下降时输出<b><style=\"logic_on\">绿色信号</style></b>脉冲"
+
+#. STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.LOGIC_PORT_INACTIVE
+msgctxt "STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.LOGIC_PORT_INACTIVE"
+msgid "Otherwise, sends a <b><style=\"logic_off\">Red Signal</style></b> on each bit"
+msgstr "否则，每一位都输出<b><style=\"logic_off\">红色信号</style></b>"
+
+#. STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.NAME
+msgctxt "STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.NAME"
+msgid "<link=\"MULTICHANNELCRITTERSENSOR\">Multichannel Critter Sensor</link>"
+msgstr "<link=\"MULTICHANNELCRITTERSENSOR\">多通道小动物传感器</link>"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_CRITTERS
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_CRITTERS"
+msgid "All critters"
+msgstr "全部小动物"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_CRITTERS_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_CRITTERS_TOOLTIP"
+msgid "Count every critter species, including ones discovered later"
+msgstr "计算所有小动物物种，包括之后才发现的物种"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_EGGS
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_EGGS"
+msgid "All eggs"
+msgstr "全部蛋"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_EGGS_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_EGGS_TOOLTIP"
+msgid "Count every egg type, including ones discovered later"
+msgstr "计算所有种类的蛋，包括之后才发现的种类"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COMBINED_ABOVE
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COMBINED_ABOVE"
+msgid "Bit 1 sends a <b><style=\"logic_on\">Green Signal</style></b> if there are more than <b>{0}</b> tracked <style=\"KKeyword\">Critters</style> or <style=\"KKeyword\">Eggs</style> in the room"
+msgstr "若房间内所追踪的<style=\"KKeyword\">小动物</style>或<style=\"KKeyword\">蛋</style>多于<b>{0}</b>，位1输出<b><style=\"logic_on\">绿色信号</style></b>"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COMBINED_BELOW
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COMBINED_BELOW"
+msgid "Bit 1 sends a <b><style=\"logic_on\">Green Signal</style></b> if there are fewer than <b>{0}</b> tracked <style=\"KKeyword\">Critters</style> or <style=\"KKeyword\">Eggs</style> in the room"
+msgstr "若房间内所追踪的<style=\"KKeyword\">小动物</style>或<style=\"KKeyword\">蛋</style>少于<b>{0}</b>，位1输出<b><style=\"logic_on\">绿色信号</style></b>"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COUNT_CRITTERS_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COUNT_CRITTERS_TOOLTIP"
+msgid "Include critters in the count. The list below chooses which species; only discovered species are shown."
+msgstr "将小动物计入数量。在下方列表中选择要计算的物种；只显示已发现的物种。"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COUNT_EGGS_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COUNT_EGGS_TOOLTIP"
+msgid "Include eggs in the count. The list below chooses which egg types; only discovered eggs are shown."
+msgstr "将蛋计入数量。在下方列表中选择要计算的蛋的种类；只显示已发现的蛋。"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CRITTERS_ABOVE
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CRITTERS_ABOVE"
+msgid "Bit 1 sends a <b><style=\"logic_on\">Green Signal</style></b> if there are more than <b>{0}</b> tracked <style=\"KKeyword\">Critters</style> in the room"
+msgstr "若房间内所追踪的<style=\"KKeyword\">小动物</style>多于<b>{0}</b>，位1输出<b><style=\"logic_on\">绿色信号</style></b>"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CRITTERS_BELOW
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CRITTERS_BELOW"
+msgid "Bit 1 sends a <b><style=\"logic_on\">Green Signal</style></b> if there are fewer than <b>{0}</b> tracked <style=\"KKeyword\">Critters</style> in the room"
+msgstr "若房间内所追踪的<style=\"KKeyword\">小动物</style>少于<b>{0}</b>，位1输出<b><style=\"logic_on\">绿色信号</style></b>"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CURRENT_CRITTERS
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CURRENT_CRITTERS"
+msgid "Current Critters: {0}"
+msgstr "当前小动物：{0}"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CURRENT_EGGS
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CURRENT_EGGS"
+msgid "Current Eggs: {0}"
+msgstr "当前蛋：{0}"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.EGGS_ABOVE
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.EGGS_ABOVE"
+msgid "Bit 2 sends a <b><style=\"logic_on\">Green Signal</style></b> if there are more than <b>{0}</b> tracked <style=\"KKeyword\">Eggs</style> in the room"
+msgstr "若房间内所追踪的<style=\"KKeyword\">蛋</style>多于<b>{0}</b>，位2输出<b><style=\"logic_on\">绿色信号</style></b>"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.EGGS_BELOW
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.EGGS_BELOW"
+msgid "Bit 2 sends a <b><style=\"logic_on\">Green Signal</style></b> if there are fewer than <b>{0}</b> tracked <style=\"KKeyword\">Eggs</style> in the room"
+msgstr "若房间内所追踪的<style=\"KKeyword\">蛋</style>少于<b>{0}</b>，位2输出<b><style=\"logic_on\">绿色信号</style></b>"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.EXPANDER_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.EXPANDER_TOOLTIP"
+msgid "Show or hide the list of types to count"
+msgstr "显示或隐藏要计算的种类列表"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_COMBINED
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_COMBINED"
+msgid "Combined"
+msgstr "合并"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_COMBINED_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_COMBINED_TOOLTIP"
+msgid "One threshold for critters and eggs together. Bit 1 sends a <b><style=\"logic_on\">Green Signal</style></b> when the combined count passes it."
+msgstr "小动物和蛋共用一个阈值。合计数量越过该阈值时，位1输出<b><style=\"logic_on\">绿色信号</style></b>。"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_LABEL
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_LABEL"
+msgid "Thresholds:"
+msgstr "阈值："
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_SEPARATE
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_SEPARATE"
+msgid "Separate"
+msgstr "独立"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_SEPARATE_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_SEPARATE_TOOLTIP"
+msgid "Separate thresholds for critters and eggs. Bit 1 reports the critter count, bit 2 reports the egg count."
+msgstr "小动物和蛋各有独立的阈值。位1反映小动物数量，位2反映蛋数量。"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.NOT_COUNTING
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.NOT_COUNTING"
+msgid "Nothing is being counted"
+msgstr "未计算任何对象"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.NOT_IN_ROOM
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.NOT_IN_ROOM"
+msgid "Not in a room"
+msgstr "不在房间内"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.TITLE
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.TITLE"
+msgid "Multichannel Critter Sensor"
+msgstr "多通道小动物传感器"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.VALUE_NAME_COUNT
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.VALUE_NAME_COUNT"
+msgid "Count"
+msgstr "数量"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.VALUE_NAME_CRITTERS
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.VALUE_NAME_CRITTERS"
+msgid "Critters"
+msgstr "小动物"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.VALUE_NAME_EGGS
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.VALUE_NAME_EGGS"
+msgid "Eggs"
+msgstr "蛋"

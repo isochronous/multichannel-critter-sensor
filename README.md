@@ -44,6 +44,10 @@ dotnet build src/MultichannelCritterSensor -c Release -p:GameFolder="<path-to>\O
 
 A successful build merges [PLib](https://github.com/peterhaneve/ONIMods/tree/main/PLib) into the DLL and deploys the mod to `Documents\Klei\OxygenNotIncluded\mods\local\MultichannelCritterSensor` (disable with `-p:ModDeployFolder=none`).
 
+## Translations
+
+The mod is available in English and Chinese (Simplified). The game's language setting picks the translation; it loads from `translations/<locale>.po` next to the mod DLL. Other languages can be added by translating the template `src/MultichannelCritterSensor/translations/MultichannelCritterSensor.pot` into `<locale>.po` in the same folder.
+
 ## Implementation notes
 
 - `MultichannelCritterSensor` (the building component) walks the room cavity's creature and egg lists every 200 ms, filtering each entry by prefab tag, and sends the packed value through a `RibbonOutputPort`. Pulse bits are cleared from the circuit manager's `onLogicTick` callback, which fires right after the network samples sender values, so each pulse is read by exactly one tick.

@@ -1,4 +1,5 @@
 using UnityEngine;
+using SIDE_SCREEN = MultichannelCritterSensor.ModStrings.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN;
 
 namespace MultichannelCritterSensor
 {
@@ -15,6 +16,19 @@ namespace MultichannelCritterSensor
 			Combined,
 			Critters,
 			Eggs,
+		}
+
+		/// <summary>
+		/// Empty units for the cloned vanilla screen, which renders them through LocString.ToString()
+		/// (a key lookup). Kept out of ModStrings: an empty text has no translation, and an empty msgid
+		/// is a header to po tools.
+		/// </summary>
+		private static readonly LocString NoUnits = new LocString("", "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.NO_UNITS");
+
+		/// <summary>Puts the empty units text in the string table; call once at mod load.</summary>
+		public static void RegisterNoUnits()
+		{
+			Strings.Add(NoUnits.key.String, NoUnits.text);
 		}
 
 		public Kind kind;
@@ -95,7 +109,7 @@ namespace MultichannelCritterSensor
 
 		public float RangeMax => MultichannelCritterSensor.MaxThreshold;
 
-		public LocString Title => ModStrings.TitleLoc;
+		public LocString Title => SIDE_SCREEN.TITLE;
 
 		public LocString ThresholdValueName
 		{
@@ -103,9 +117,9 @@ namespace MultichannelCritterSensor
 			{
 				switch (kind)
 				{
-					case Kind.Critters: return ModStrings.ValueNameCritters;
-					case Kind.Eggs: return ModStrings.ValueNameEggs;
-					default: return ModStrings.ValueNameCount;
+					case Kind.Critters: return SIDE_SCREEN.VALUE_NAME_CRITTERS;
+					case Kind.Eggs: return SIDE_SCREEN.VALUE_NAME_EGGS;
+					default: return SIDE_SCREEN.VALUE_NAME_COUNT;
 				}
 			}
 		}
@@ -116,9 +130,9 @@ namespace MultichannelCritterSensor
 			{
 				switch (kind)
 				{
-					case Kind.Critters: return ModStrings.CrittersAbove;
-					case Kind.Eggs: return ModStrings.EggsAbove;
-					default: return ModStrings.CombinedAbove;
+					case Kind.Critters: return SIDE_SCREEN.CRITTERS_ABOVE;
+					case Kind.Eggs: return SIDE_SCREEN.EGGS_ABOVE;
+					default: return SIDE_SCREEN.COMBINED_ABOVE;
 				}
 			}
 		}
@@ -129,9 +143,9 @@ namespace MultichannelCritterSensor
 			{
 				switch (kind)
 				{
-					case Kind.Critters: return ModStrings.CrittersBelow;
-					case Kind.Eggs: return ModStrings.EggsBelow;
-					default: return ModStrings.CombinedBelow;
+					case Kind.Critters: return SIDE_SCREEN.CRITTERS_BELOW;
+					case Kind.Eggs: return SIDE_SCREEN.EGGS_BELOW;
+					default: return SIDE_SCREEN.COMBINED_BELOW;
 				}
 			}
 		}
@@ -146,7 +160,7 @@ namespace MultichannelCritterSensor
 
 		public float GetRangeMaxInputField() => RangeMax;
 
-		public LocString ThresholdValueUnits() => ModStrings.NoUnits;
+		public LocString ThresholdValueUnits() => NoUnits;
 
 		public string Format(float value, bool units) => Mathf.RoundToInt(value).ToString();
 
