@@ -1,0 +1,168 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included\n"
+"POT Version: 2.0\n"
+"Language: ko_KR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.DESC
+msgctxt "STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.DESC"
+msgid "Tracking exactly which critters and eggs share a room allows for much finer control over automated ranching."
+msgstr "방에 어떤 크리터와 알이 있는지 정확히 파악하면 자동화된 사육을 훨씬 더 정밀하게 제어할 수 있습니다."
+
+#. STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.EFFECT
+msgctxt "STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.EFFECT"
+msgid "Counts the selected <link=\"CREATURES\">Critters</link> and Eggs in its room and writes the results to an <link=\"LOGICRIBBON\">Automation Ribbon</link>:\n\n<b>Bit 1</b>: <b><style=\"logic_on\">Green Signal</style></b> when the count passes the threshold\n<b>Bit 2</b>: <b><style=\"logic_on\">Green Signal</style></b> when the egg count passes its own threshold (separate-thresholds mode only)\n<b>Bit 3</b>: a brief <b><style=\"logic_on\">Green Signal</style></b> pulse each time the tracked count rises\n<b>Bit 4</b>: a brief <b><style=\"logic_on\">Green Signal</style></b> pulse each time the tracked count falls\n\n<link=\"LOGICRIBBON\">Automation Ribbon</link> must be used as the output wire to avoid overloading."
+msgstr "방에 있는 선택한 <link=\"CREATURES\">크리터</link>와 알의 수를 세어 그 결과를 <link=\"LOGICRIBBON\">자동화 리본</link>에 기록합니다:\n\n<b>비트 1</b>: 수가 임계값을 넘으면 <b><style=\"logic_on\">녹색 신호</style></b>\n<b>비트 2</b>: 알의 수가 별도의 임계값을 넘으면 <b><style=\"logic_on\">녹색 신호</style></b>(개별 임계값 모드에서만)\n<b>비트 3</b>: 추적 중인 수가 늘어날 때마다 짧은 <b><style=\"logic_on\">녹색 신호</style></b> 펄스\n<b>비트 4</b>: 추적 중인 수가 줄어들 때마다 짧은 <b><style=\"logic_on\">녹색 신호</style></b> 펄스\n\n과부하를 피하려면 출력 와이어로 <link=\"LOGICRIBBON\">자동화 리본</link>을 사용해야 합니다."
+
+#. STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.LOGIC_PORT
+msgctxt "STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.LOGIC_PORT"
+msgid "Critter Count (4-Bit)"
+msgstr "크리터 수(4비트)"
+
+#. STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.LOGIC_PORT_ACTIVE
+msgctxt "STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.LOGIC_PORT_ACTIVE"
+msgid "Bit 1: <b><style=\"logic_on\">Green Signal</style></b> if the tracked count is past the threshold\nBit 2: <b><style=\"logic_on\">Green Signal</style></b> if the egg count is past its threshold (separate mode)\nBit 3: <b><style=\"logic_on\">Green Signal</style></b> pulse when the tracked count rises\nBit 4: <b><style=\"logic_on\">Green Signal</style></b> pulse when the tracked count falls"
+msgstr "비트 1: 추적 중인 수가 임계값을 넘으면 <b><style=\"logic_on\">녹색 신호</style></b>\n비트 2: 알의 수가 임계값을 넘으면 <b><style=\"logic_on\">녹색 신호</style></b>(개별 모드)\n비트 3: 추적 중인 수가 늘어나면 <b><style=\"logic_on\">녹색 신호</style></b> 펄스\n비트 4: 추적 중인 수가 줄어들면 <b><style=\"logic_on\">녹색 신호</style></b> 펄스"
+
+#. STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.LOGIC_PORT_INACTIVE
+msgctxt "STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.LOGIC_PORT_INACTIVE"
+msgid "Otherwise, sends a <b><style=\"logic_off\">Red Signal</style></b> on each bit"
+msgstr "그 외에는 모든 비트에 <b><style=\"logic_off\">적색 신호</style></b>를 보냅니다"
+
+#. STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.NAME
+msgctxt "STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.NAME"
+msgid "<link=\"MULTICHANNELCRITTERSENSOR\">Multichannel Critter Sensor</link>"
+msgstr "<link=\"MULTICHANNELCRITTERSENSOR\">다중 채널 크리터 센서</link>"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_CRITTERS
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_CRITTERS"
+msgid "All critters"
+msgstr "모든 크리터"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_CRITTERS_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_CRITTERS_TOOLTIP"
+msgid "Count every critter species, including ones discovered later"
+msgstr "나중에 발견되는 종을 포함해 모든 크리터 종을 셉니다"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_EGGS
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_EGGS"
+msgid "All eggs"
+msgstr "모든 알"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_EGGS_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_EGGS_TOOLTIP"
+msgid "Count every egg type, including ones discovered later"
+msgstr "나중에 발견되는 종류를 포함해 모든 종류의 알을 셉니다"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COMBINED_ABOVE
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COMBINED_ABOVE"
+msgid "Bit 1 sends a <b><style=\"logic_on\">Green Signal</style></b> if there are more than <b>{0}</b> tracked <style=\"KKeyword\">Critters</style> or <style=\"KKeyword\">Eggs</style> in the room"
+msgstr "방에 추적 중인 <style=\"KKeyword\">크리터</style> 또는 <style=\"KKeyword\">알</style>이 <b>{0}</b> 초과이면 비트 1이 <b><style=\"logic_on\">녹색 신호</style></b>를 보냅니다"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COMBINED_BELOW
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COMBINED_BELOW"
+msgid "Bit 1 sends a <b><style=\"logic_on\">Green Signal</style></b> if there are fewer than <b>{0}</b> tracked <style=\"KKeyword\">Critters</style> or <style=\"KKeyword\">Eggs</style> in the room"
+msgstr "방에 추적 중인 <style=\"KKeyword\">크리터</style> 또는 <style=\"KKeyword\">알</style>이 <b>{0}</b> 미만이면 비트 1이 <b><style=\"logic_on\">녹색 신호</style></b>를 보냅니다"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COUNT_CRITTERS_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COUNT_CRITTERS_TOOLTIP"
+msgid "Include critters in the count. The list below chooses which species; only discovered species are shown."
+msgstr "크리터를 수에 포함합니다. 아래 목록에서 셀 종을 선택하며, 발견된 종만 표시됩니다."
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COUNT_EGGS_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COUNT_EGGS_TOOLTIP"
+msgid "Include eggs in the count. The list below chooses which egg types; only discovered eggs are shown."
+msgstr "알을 수에 포함합니다. 아래 목록에서 셀 알의 종류를 선택하며, 발견된 알만 표시됩니다."
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CRITTERS_ABOVE
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CRITTERS_ABOVE"
+msgid "Bit 1 sends a <b><style=\"logic_on\">Green Signal</style></b> if there are more than <b>{0}</b> tracked <style=\"KKeyword\">Critters</style> in the room"
+msgstr "방에 추적 중인 <style=\"KKeyword\">크리터</style>가 <b>{0}</b> 초과이면 비트 1이 <b><style=\"logic_on\">녹색 신호</style></b>를 보냅니다"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CRITTERS_BELOW
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CRITTERS_BELOW"
+msgid "Bit 1 sends a <b><style=\"logic_on\">Green Signal</style></b> if there are fewer than <b>{0}</b> tracked <style=\"KKeyword\">Critters</style> in the room"
+msgstr "방에 추적 중인 <style=\"KKeyword\">크리터</style>가 <b>{0}</b> 미만이면 비트 1이 <b><style=\"logic_on\">녹색 신호</style></b>를 보냅니다"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CURRENT_CRITTERS
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CURRENT_CRITTERS"
+msgid "Current Critters: {0}"
+msgstr "현재 크리터: {0}"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CURRENT_EGGS
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CURRENT_EGGS"
+msgid "Current Eggs: {0}"
+msgstr "현재 알: {0}"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.EGGS_ABOVE
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.EGGS_ABOVE"
+msgid "Bit 2 sends a <b><style=\"logic_on\">Green Signal</style></b> if there are more than <b>{0}</b> tracked <style=\"KKeyword\">Eggs</style> in the room"
+msgstr "방에 추적 중인 <style=\"KKeyword\">알</style>이 <b>{0}</b> 초과이면 비트 2가 <b><style=\"logic_on\">녹색 신호</style></b>를 보냅니다"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.EGGS_BELOW
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.EGGS_BELOW"
+msgid "Bit 2 sends a <b><style=\"logic_on\">Green Signal</style></b> if there are fewer than <b>{0}</b> tracked <style=\"KKeyword\">Eggs</style> in the room"
+msgstr "방에 추적 중인 <style=\"KKeyword\">알</style>이 <b>{0}</b> 미만이면 비트 2가 <b><style=\"logic_on\">녹색 신호</style></b>를 보냅니다"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.EXPANDER_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.EXPANDER_TOOLTIP"
+msgid "Show or hide the list of types to count"
+msgstr "셀 종류 목록을 표시하거나 숨깁니다"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_COMBINED
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_COMBINED"
+msgid "Combined"
+msgstr "통합"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_COMBINED_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_COMBINED_TOOLTIP"
+msgid "One threshold for critters and eggs together. Bit 1 sends a <b><style=\"logic_on\">Green Signal</style></b> when the combined count passes it."
+msgstr "크리터와 알에 하나의 임계값을 함께 적용합니다. 합산한 수가 임계값을 넘으면 비트 1이 <b><style=\"logic_on\">녹색 신호</style></b>를 보냅니다."
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_LABEL
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_LABEL"
+msgid "Thresholds:"
+msgstr "임계값:"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_SEPARATE
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_SEPARATE"
+msgid "Separate"
+msgstr "개별"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_SEPARATE_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_SEPARATE_TOOLTIP"
+msgid "Separate thresholds for critters and eggs. Bit 1 reports the critter count, bit 2 reports the egg count."
+msgstr "크리터와 알에 각각 별도의 임계값을 적용합니다. 비트 1은 크리터 수를, 비트 2는 알의 수를 알립니다."
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.NOT_COUNTING
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.NOT_COUNTING"
+msgid "Nothing is being counted"
+msgstr "아무것도 세고 있지 않습니다"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.NOT_IN_ROOM
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.NOT_IN_ROOM"
+msgid "Not in a room"
+msgstr "방 안에 있지 않음"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.TITLE
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.TITLE"
+msgid "Multichannel Critter Sensor"
+msgstr "다중 채널 크리터 센서"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.VALUE_NAME_COUNT
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.VALUE_NAME_COUNT"
+msgid "Count"
+msgstr "수"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.VALUE_NAME_CRITTERS
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.VALUE_NAME_CRITTERS"
+msgid "Critters"
+msgstr "크리터"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.VALUE_NAME_EGGS
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.VALUE_NAME_EGGS"
+msgid "Eggs"
+msgstr "알"

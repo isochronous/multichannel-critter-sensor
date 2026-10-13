@@ -1,0 +1,168 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included\n"
+"POT Version: 2.0\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.DESC
+msgctxt "STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.DESC"
+msgid "Tracking exactly which critters and eggs share a room allows for much finer control over automated ranching."
+msgstr "Точный учет того, какие существа и яйца находятся в комнате, позволяет гораздо тоньше управлять автоматизированным животноводством."
+
+#. STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.EFFECT
+msgctxt "STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.EFFECT"
+msgid "Counts the selected <link=\"CREATURES\">Critters</link> and Eggs in its room and writes the results to an <link=\"LOGICRIBBON\">Automation Ribbon</link>:\n\n<b>Bit 1</b>: <b><style=\"logic_on\">Green Signal</style></b> when the count passes the threshold\n<b>Bit 2</b>: <b><style=\"logic_on\">Green Signal</style></b> when the egg count passes its own threshold (separate-thresholds mode only)\n<b>Bit 3</b>: a brief <b><style=\"logic_on\">Green Signal</style></b> pulse each time the tracked count rises\n<b>Bit 4</b>: a brief <b><style=\"logic_on\">Green Signal</style></b> pulse each time the tracked count falls\n\n<link=\"LOGICRIBBON\">Automation Ribbon</link> must be used as the output wire to avoid overloading."
+msgstr "Считает выбранных <link=\"CREATURES\">существ</link> и яйца в своей комнате и записывает результат в <link=\"LOGICRIBBON\">автоматическую ленту</link>:\n\n<b>Бит 1</b>: <b><style=\"logic_on\">зеленый сигнал</style></b>, когда количество переходит порог\n<b>Бит 2</b>: <b><style=\"logic_on\">зеленый сигнал</style></b>, когда количество яиц переходит свой отдельный порог (только в режиме раздельных порогов)\n<b>Бит 3</b>: короткий импульс <b><style=\"logic_on\">зеленого сигнала</style></b> при каждом росте отслеживаемого количества\n<b>Бит 4</b>: короткий импульс <b><style=\"logic_on\">зеленого сигнала</style></b> при каждом снижении отслеживаемого количества\n\nВ качестве выходного провода нужно использовать <link=\"LOGICRIBBON\">автоматическую ленту</link>, чтобы избежать перегрузки."
+
+#. STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.LOGIC_PORT
+msgctxt "STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.LOGIC_PORT"
+msgid "Critter Count (4-Bit)"
+msgstr "Количество существ (4 бита)"
+
+#. STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.LOGIC_PORT_ACTIVE
+msgctxt "STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.LOGIC_PORT_ACTIVE"
+msgid "Bit 1: <b><style=\"logic_on\">Green Signal</style></b> if the tracked count is past the threshold\nBit 2: <b><style=\"logic_on\">Green Signal</style></b> if the egg count is past its threshold (separate mode)\nBit 3: <b><style=\"logic_on\">Green Signal</style></b> pulse when the tracked count rises\nBit 4: <b><style=\"logic_on\">Green Signal</style></b> pulse when the tracked count falls"
+msgstr "Бит 1: <b><style=\"logic_on\">зеленый сигнал</style></b>, если отслеживаемое количество перешло порог\nБит 2: <b><style=\"logic_on\">зеленый сигнал</style></b>, если количество яиц перешло свой порог (раздельный режим)\nБит 3: импульс <b><style=\"logic_on\">зеленого сигнала</style></b>, когда отслеживаемое количество растет\nБит 4: импульс <b><style=\"logic_on\">зеленого сигнала</style></b>, когда отслеживаемое количество снижается"
+
+#. STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.LOGIC_PORT_INACTIVE
+msgctxt "STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.LOGIC_PORT_INACTIVE"
+msgid "Otherwise, sends a <b><style=\"logic_off\">Red Signal</style></b> on each bit"
+msgstr "В противном случае отправляет <b><style=\"logic_off\">красный сигнал</style></b> на каждом бите"
+
+#. STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.NAME
+msgctxt "STRINGS.BUILDINGS.PREFABS.MULTICHANNELCRITTERSENSOR.NAME"
+msgid "<link=\"MULTICHANNELCRITTERSENSOR\">Multichannel Critter Sensor</link>"
+msgstr "<link=\"MULTICHANNELCRITTERSENSOR\">Многоканальный сенсор существ</link>"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_CRITTERS
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_CRITTERS"
+msgid "All critters"
+msgstr "Все существа"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_CRITTERS_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_CRITTERS_TOOLTIP"
+msgid "Count every critter species, including ones discovered later"
+msgstr "Считать все виды существ, включая обнаруженные позже"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_EGGS
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_EGGS"
+msgid "All eggs"
+msgstr "Все яйца"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_EGGS_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.ALL_EGGS_TOOLTIP"
+msgid "Count every egg type, including ones discovered later"
+msgstr "Считать все типы яиц, включая обнаруженные позже"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COMBINED_ABOVE
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COMBINED_ABOVE"
+msgid "Bit 1 sends a <b><style=\"logic_on\">Green Signal</style></b> if there are more than <b>{0}</b> tracked <style=\"KKeyword\">Critters</style> or <style=\"KKeyword\">Eggs</style> in the room"
+msgstr "Бит 1 отправляет <b><style=\"logic_on\">зеленый сигнал</style></b>, если отслеживаемых <style=\"KKeyword\">существ</style> или <style=\"KKeyword\">яиц</style> в комнате больше <b>{0}</b>"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COMBINED_BELOW
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COMBINED_BELOW"
+msgid "Bit 1 sends a <b><style=\"logic_on\">Green Signal</style></b> if there are fewer than <b>{0}</b> tracked <style=\"KKeyword\">Critters</style> or <style=\"KKeyword\">Eggs</style> in the room"
+msgstr "Бит 1 отправляет <b><style=\"logic_on\">зеленый сигнал</style></b>, если отслеживаемых <style=\"KKeyword\">существ</style> или <style=\"KKeyword\">яиц</style> в комнате меньше <b>{0}</b>"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COUNT_CRITTERS_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COUNT_CRITTERS_TOOLTIP"
+msgid "Include critters in the count. The list below chooses which species; only discovered species are shown."
+msgstr "Включать существ в подсчет. Список ниже выбирает виды; показаны только обнаруженные виды."
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COUNT_EGGS_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.COUNT_EGGS_TOOLTIP"
+msgid "Include eggs in the count. The list below chooses which egg types; only discovered eggs are shown."
+msgstr "Включать яйца в подсчет. Список ниже выбирает типы яиц; показаны только обнаруженные яйца."
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CRITTERS_ABOVE
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CRITTERS_ABOVE"
+msgid "Bit 1 sends a <b><style=\"logic_on\">Green Signal</style></b> if there are more than <b>{0}</b> tracked <style=\"KKeyword\">Critters</style> in the room"
+msgstr "Бит 1 отправляет <b><style=\"logic_on\">зеленый сигнал</style></b>, если отслеживаемых <style=\"KKeyword\">существ</style> в комнате больше <b>{0}</b>"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CRITTERS_BELOW
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CRITTERS_BELOW"
+msgid "Bit 1 sends a <b><style=\"logic_on\">Green Signal</style></b> if there are fewer than <b>{0}</b> tracked <style=\"KKeyword\">Critters</style> in the room"
+msgstr "Бит 1 отправляет <b><style=\"logic_on\">зеленый сигнал</style></b>, если отслеживаемых <style=\"KKeyword\">существ</style> в комнате меньше <b>{0}</b>"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CURRENT_CRITTERS
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CURRENT_CRITTERS"
+msgid "Current Critters: {0}"
+msgstr "Существ сейчас: {0}"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CURRENT_EGGS
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.CURRENT_EGGS"
+msgid "Current Eggs: {0}"
+msgstr "Яиц сейчас: {0}"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.EGGS_ABOVE
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.EGGS_ABOVE"
+msgid "Bit 2 sends a <b><style=\"logic_on\">Green Signal</style></b> if there are more than <b>{0}</b> tracked <style=\"KKeyword\">Eggs</style> in the room"
+msgstr "Бит 2 отправляет <b><style=\"logic_on\">зеленый сигнал</style></b>, если отслеживаемых <style=\"KKeyword\">яиц</style> в комнате больше <b>{0}</b>"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.EGGS_BELOW
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.EGGS_BELOW"
+msgid "Bit 2 sends a <b><style=\"logic_on\">Green Signal</style></b> if there are fewer than <b>{0}</b> tracked <style=\"KKeyword\">Eggs</style> in the room"
+msgstr "Бит 2 отправляет <b><style=\"logic_on\">зеленый сигнал</style></b>, если отслеживаемых <style=\"KKeyword\">яиц</style> в комнате меньше <b>{0}</b>"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.EXPANDER_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.EXPANDER_TOOLTIP"
+msgid "Show or hide the list of types to count"
+msgstr "Показать или скрыть список типов для подсчета"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_COMBINED
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_COMBINED"
+msgid "Combined"
+msgstr "Общий"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_COMBINED_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_COMBINED_TOOLTIP"
+msgid "One threshold for critters and eggs together. Bit 1 sends a <b><style=\"logic_on\">Green Signal</style></b> when the combined count passes it."
+msgstr "Один порог для существ и яиц вместе. Бит 1 отправляет <b><style=\"logic_on\">зеленый сигнал</style></b>, когда общее количество переходит его."
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_LABEL
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_LABEL"
+msgid "Thresholds:"
+msgstr "Пороги:"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_SEPARATE
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_SEPARATE"
+msgid "Separate"
+msgstr "Раздельные"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_SEPARATE_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.MODE_SEPARATE_TOOLTIP"
+msgid "Separate thresholds for critters and eggs. Bit 1 reports the critter count, bit 2 reports the egg count."
+msgstr "Раздельные пороги для существ и яиц. Бит 1 сообщает количество существ, бит 2 сообщает количество яиц."
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.NOT_COUNTING
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.NOT_COUNTING"
+msgid "Nothing is being counted"
+msgstr "Ничего не считается"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.NOT_IN_ROOM
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.NOT_IN_ROOM"
+msgid "Not in a room"
+msgstr "Не в комнате"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.TITLE
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.TITLE"
+msgid "Multichannel Critter Sensor"
+msgstr "Многоканальный сенсор существ"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.VALUE_NAME_COUNT
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.VALUE_NAME_COUNT"
+msgid "Count"
+msgstr "Количество"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.VALUE_NAME_CRITTERS
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.VALUE_NAME_CRITTERS"
+msgid "Critters"
+msgstr "Существа"
+
+#. STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.VALUE_NAME_EGGS
+msgctxt "STRINGS.UI.UISIDESCREENS.MULTICHANNEL_CRITTER_SENSOR_SIDE_SCREEN.VALUE_NAME_EGGS"
+msgid "Eggs"
+msgstr "Яйца"

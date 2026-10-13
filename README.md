@@ -46,7 +46,7 @@ A successful build merges [PLib](https://github.com/peterhaneve/ONIMods/tree/mai
 
 ## Translations
 
-The mod is available in English and Chinese (Simplified). The game's language setting picks the translation; it loads from `translations/<locale>.po` next to the mod DLL. Other languages can be added by translating the template `src/MultichannelCritterSensor/translations/MultichannelCritterSensor.pot` into `<locale>.po` in the same folder.
+The mod is available in English, Chinese (Simplified), Korean and Russian. The game's language setting picks the translation; it loads from `translations/<locale>.po` next to the mod DLL. Other languages can be added by translating the template `src/MultichannelCritterSensor/translations/MultichannelCritterSensor.pot` into `<locale>.po` in the same folder.
 
 ## Implementation notes
 

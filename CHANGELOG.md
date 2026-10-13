@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- Chinese (Simplified) translation. Translations load from translations/<locale>.po; the template for other languages is translations/MultichannelCritterSensor.pot.
+- Chinese (Simplified), Korean and Russian translations. Translations load from translations/<locale>.po; the template for other languages is translations/MultichannelCritterSensor.pot.
 
 ## 0.2.4 - 2026-10-03
 
